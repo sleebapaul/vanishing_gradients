@@ -11815,9 +11815,9 @@ Okay :/</code></pre>
 <p>How do we calculate $\hat y$ ? It is the product of activations of each layer.</p>
 <p>Layer 1 output, $Z^1$ = $W^1 * X$</p>
 <p>Activation of layer 1, $A^1$ = $g(Z^1) = W^1 * X$</p>
-<p>Layer 2 output, $Z^2$ = $W^2$ <em> Activation of layer 1 = $W^2 </em> W^1 * X$</p>
-<p>Activation of layer 2, $A^2$ = $g(Z^2) = g(W^2 * W^1 * X) = W^2 * W^1 * X$</p>
-<p>Layer 3 output, $Z^3$ = $W^3$ <em> Activation of layer 2 = $W^3 </em> W^2 <em> W^1 </em> X$</p>
+<p>Layer 2 output, $Z^2$ = $W^2\ *\ Activation\ of\ layer\ 1 =\ W^2 * W^1 * X $</p>
+<p>Activation of layer 2, $A^2$ = $g(Z^2) = g(W^2 * W^1 * X) =\ W^2 * W^1 * X$</p>
+<p>Layer 3 output, $Z^3$ = $W^3\ *\ Activation\ of\ layer\ 2 =\ W^3 * W^2 * W^1 * X $</p>
 <p>Activation of layer 3, $\hat y$ or $A^3$ = $g(Z^3) = g(W^3 * W^2 * W^1 * X ) = W^3 * W^2 * W^1 * X$</p>
 <p>Then,</p>
 <p>$$\hat y\ =\ W^3 * W^2 * W^1 * X$$</p>
