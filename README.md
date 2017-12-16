@@ -1,4 +1,4 @@
-#Vanishing Gradient 
+# Vanishing Gradient
 
 Now let me tell you the story behind this whole tutorial on Vanishing Gradients. I wanted to write a tutorial on ResNets paper, but when started I had this feeling that without giving a proper definition on the problem we are going to solve with ResNets, the whole tutorial would be incomplete. So I started working on this tutorial, which you may find as a preamble to ResNets tutorial :D 
 
