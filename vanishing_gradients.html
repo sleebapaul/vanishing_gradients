@@ -11867,15 +11867,12 @@ I know that too, are you done? :)
 NO ! Yeah ... yes :@
 This assumption is solely intended for getting a better understanding of the issue. Let's continue :)</code></pre>
 <p>Here we have 3 layers, but let's generalize for $L$ layers.</p>
-<ol>
-<li>$W&gt;I$ for I = Identity matrix  </li>
-</ol>
+<p>a. $W&gt;I$ for I = Identity matrix</p>
 <p>$$\frac{\partial J}{\partial W^1} = W^L * X$$</p>
 <p>Since W is greater than 1, the resulting value will be exponentially high. This is called Exploding gradients.</p>
-<ol>
-<li>$W&lt;I$ for I = Identity matrix  </li>
-</ol>
+<p>b. $W&lt;I$ for I = Identity matrix</p>
 <p>$$\frac{\partial J}{\partial W^1} = W^L * X$$</p>
+<p>Since W is less than 1, the resulting value will be exponentially decaying. This is called Exploding gradients.</p>
 <h2 id="The-victims">The victims<a class="anchor-link" href="#The-victims">&#182;</a></h2>
 <pre><code>Let me ask you something, How severe vanishing gradient is going to each layer? ;)
 Gradients are everywhere, so it should be the same effect, right? :/
@@ -11912,7 +11909,15 @@ $$</p>
 $$</p>
 <p>As we propagate away from final layer, the perturbation on network output will not reach the layers, even if reaches, the gradient will be too feeble to make an update. This issue get worsened when number of layers increases. Very deep networks often have a gradient signal that goes to zero quickly because of this reason, thus making gradient descent unbearably slow. More specifically, during gradient descent, as we backprop from the final layer back to the first layer, we are multiplying by the weight matrix on each step, and thus the gradient can decrease exponentially quickly to zero. Gradient based methods learn a parameter's value by understanding how a small change in the parameter's value will affect the network's output. If a change in the parameter's value causes very small change in the network's output - the network just can't learn the parameter effectively.</p>
 <p><img src="images/vanishing_grad_kiank.png" style="width:450px;height:220px;"></p>
-<caption><center> <u> <font color='purple'> **Figure 1** </u><font color='purple'>  : **Vanishing gradient** <br> The speed of learning decreases very rapidly for the early layers as the network trains </center></caption><p>So, which layer is going to suffer the most? Obviously the initial layers. Now think about it, in image recognition we saw that initial layers are the learning the building blocks like edges, if they are learned wrong, then you know...</p>
+<caption><center> <u> <font color='purple'> **Figure 1** </u><font color='purple'>  : **Vanishing gradient** <br> The speed of learning decreases very rapidly for the early layers as the network trains </center></caption>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, which layer is going to suffer the most? Obviously the initial layers. Now think about it, in image recognition we saw that initial layers are the learning the building blocks like edges, if they are learned wrong, then you know...</p>
 <p>So that's it. We defined the problem pretty comphrehensive. Now do we have any remedies?</p>
 <h2 id="Remedies">Remedies<a class="anchor-link" href="#Remedies">&#182;</a></h2><p>Well I've a sad news for you. There is no complete cure for vanishing gradient yet, but we've some remarkable advancements to reduce the effect. We'll discuss some techniques and it's consequences.</p>
 <hr>
